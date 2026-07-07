@@ -1,0 +1,115 @@
+{
+  "intents": [
+    {
+      "tag": "greeting",
+      "patterns": ["Hi", "Hello", "Hey", "Good morning", "Good evening"],
+      "responses": ["Hi! I'm the SafeX Solutions assistant. How can I help you today?"]
+    },
+    {
+      "tag": "about_company",
+      "patterns": ["What is SafeX Solutions?", "Tell me about SafeX Solutions", "What does SafeX Solutions do?"],
+      "responses": ["SafeX Solutions is a global, full-service technology and digital solutions company delivering IT services, cybersecurity, marketing, and creative media solutions to businesses in more than 15 countries worldwide."]
+    },
+    {
+      "tag": "services_overview",
+      "patterns": ["What services does SafeX Solutions offer?", "What can SafeX Solutions help me with?", "List your services"],
+      "responses": ["We specialize in web development, network infrastructure, cloud solutions, and cybersecurity services, combined with data-driven digital marketing, branding, photography, and videography services."]
+    },
+    {
+      "tag": "clients",
+      "patterns": ["Who do you work with?", "Do you work with startups?", "Do you work with small businesses?", "Do you offer enterprise solutions?"],
+      "responses": ["We work closely with startups, small businesses, and enterprises, delivering custom, scalable, and secure solutions tailored to each client's unique goals."]
+    },
+    {
+      "tag": "web_development",
+      "patterns": ["Does SafeX Solutions build websites?", "What web development services do you offer?", "Do you build e-commerce websites?", "Can you build a custom web application?", "Do you build corporate websites?"],
+      "responses": ["Yes. We offer Web Development & Application Design, including corporate websites, eCommerce platforms, and custom applications. For specifics on technology stack, timelines, or pricing, please contact us directly."]
+    },
+    {
+      "tag": "cybersecurity",
+      "patterns": ["What cybersecurity services do you provide?", "Can you protect my business from cyberattacks?", "Do you offer network security services?", "Do you provide data protection solutions?"],
+      "responses": ["Cybersecurity is one of our core service areas, alongside network infrastructure, designed to keep your business connected, protected, and future-ready."]
+    },
+    {
+      "tag": "cloud_infrastructure",
+      "patterns": ["Do you offer cloud solutions?", "Can you help migrate my business to the cloud?", "What network infrastructure services do you provide?"],
+      "responses": ["Yes, cloud solutions and network infrastructure are part of our core technology services. For details specific to your setup, please contact us to discuss."]
+    },
+    {
+      "tag": "digital_marketing",
+      "patterns": ["Do you offer digital marketing services?", "What is included in your SEO services?", "Do you manage social media accounts?", "Can you help generate leads for my business?", "Do you offer branding services?"],
+      "responses": ["Yes, we provide data-driven digital marketing and branding services designed to elevate your brand's visibility and engagement across platforms."]
+    },
+    {
+      "tag": "creative_media",
+      "patterns": ["Do you offer photography services?", "Do you provide videography services?", "Can you create corporate promotional videos?", "Do you offer video editing services?"],
+      "responses": ["Yes, photography and videography are part of our creative media services, aimed at elevating brand visibility and engagement."]
+    },
+    {
+      "tag": "skill_development",
+      "patterns": ["What is the Skill Development Centre?", "Do you offer internships?", "Do you offer mentorship programs?", "What training programs do you offer?"],
+      "responses": ["We invest in future-ready talent through structured skill development programs, professional training, mentorship, and real-world leadership opportunities."]
+    },
+    {
+      "tag": "trust_social_impact",
+      "patterns": ["What is the Trust model at SafeX Solutions?", "How does SafeX Solutions give back to the community?", "What percentage of profits go to the Trust?", "Is SafeX Solutions a youth-led company?"],
+      "responses": ["SafeX Solutions is a growing global business network led by young professionals. As part of our social impact commitment, 50% of our profits are reinvested into our independent Trust."]
+    },
+    {
+      "tag": "contact",
+      "patterns": ["How can I contact SafeX Solutions?", "What is your email address?", "What is your phone number?", "How do I get a quote?", "How do I start a project with you?"],
+      "responses": ["You can reach us at contact@safexsolutions.com or call +92 327 5781580."]
+    },
+    {
+      "tag": "unverified_fallback",
+      "patterns": ["Do you offer mobile app development?", "Do you offer AI automation services?", "What certifications do your team have?", "How many clients have you worked with?", "When was SafeX Solutions founded?", "Where is your office located?", "Do you offer 24/7 support?", "What are your pricing plans?"],
+      "responses": ["That detail isn't published on our website yet. Please contact us at contact@safexsolutions.com or +92 327 5781580."]
+    },
+    {
+      "tag": "goodbye",
+      "patterns": ["Bye", "Thanks", "Thank you", "That's all"],
+      "responses": ["Thanks for chatting! Feel free to reach out to contact@safexsolutions.com anytime."]
+    },
+    {
+      "tag": "careers",
+      "patterns": [
+        "How can I apply at SafeX?",
+        "How can I apply at SafeX Solutions?",
+        "Apply for job at SafeX",
+        "SafeX careers",
+        "SafeX jobs",
+        "SafeX hiring",
+        "SafeX job application",
+        "Are you hiring?",
+        "Do you have job openings?",
+        "How do I join SafeX Solutions?",
+        "I want to work at SafeX",
+        "What careers are available?",
+        "How to submit my resume?",
+        "Do you have internships for students?",
+        "How can I become part of your team?",
+        "Where can I see job listings?",
+        "I want a job at SafeX",
+        "Looking for work at SafeX"
+      ],
+      "responses": [
+        "We're always looking for talented individuals! Email your resume and portfolio to careers@safexsolutions.com with the subject line 'Job Application - [Your Field]'. We review applications within 5-7 business days."
+      ]
+    },
+    {
+      "tag": "office_location",
+      "patterns": ["Where is your office located?", "Where are you based?", "What is your address?", "Location of SafeX Solutions", "Which country are you in?", "Do you have offices in my city?"],
+      "responses": ["SafeX Solutions operates globally with teams in more than 15 countries. For specific office addresses, please email contact@safexsolutions.com."]
+    },
+    {
+      "tag": "partnerships",
+      "patterns": ["Can I partner with SafeX?", "Do you offer partnership programs?", "How to become a partner?", "Do you work with agencies?", "Are you open to collaborations?"],
+      "responses": ["We actively seek partnerships with agencies, tech companies, and creative studios worldwide. Reach out to partnerships@safexsolutions.com."]
+    },
+    {
+      "tag": "case_studies",
+      "patterns": ["Do you have case studies?", "Show me your previous work", "What projects have you done?", "Can I see your portfolio?", "Do you have client success stories?"],
+      "responses": ["Our portfolio includes successful projects across web development, cybersecurity, cloud infrastructure, and digital marketing. Visit safexsolutions.com/portfolio for more."]
+    }
+  ]
+}

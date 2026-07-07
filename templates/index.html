@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SafeX Solutions - AI Assistant</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='logo.jpeg') }}">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <div class="header-top">
+                <img src="{{ url_for('static', filename='logo.jpeg') }}" alt="SafeX Logo" class="logo-img"
+                    onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <div class="logo-fallback">🛡️</div>
+                <div class="header-text">
+                    <h1>SafeX Solutions</h1>
+                    <p>AI-Powered FAQ Assistant</p>
+                </div>
+            </div>
+        </header>
+
+        <div class="chat-container">
+            <div id="chat-messages" class="chat-messages">
+                <div class="message bot-message">
+                    <div class="message-content">
+                        👋 Hello! I'm the SafeX AI Assistant. How can I help you today?
+                    </div>
+                </div>
+            </div>
+
+            <div class="suggestions-container" id="suggestions">
+                <p class="suggestions-title">Popular Questions:</p>
+                {% for suggestion in suggestions %}
+                <button class="suggestion-btn" onclick="sendSuggestion('{{ suggestion }}')">
+                    {{ suggestion }}
+                </button>
+                {% endfor %}
+            </div>
+
+            <div class="chat-input">
+                <input type="text" id="user-input" placeholder="Type your question here..."
+                    onkeypress="handleKeyPress(event)" autocomplete="off">
+                <button onclick="sendMessage()">Send</button>
+            </div>
+        </div>
+
+        <footer>
+            📧 contact@safexsolutions.com &nbsp;|&nbsp; 📞 +92 327 5781580
+        </footer>
+    </div>
+
+    <script>
+        function addMessage(content, isUser = false, intent = null, confidence = null) {
+            const messagesDiv = document.getElementById('chat-messages');
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `message ${isUser ? 'user-message' : 'bot-message'}`;
+
+            let html = `<div class="message-content">${content}</div>`;
+            if (!isUser && intent) {
+                html += `<div class="message-meta">Confidence: ${confidence}%</div>`;
+            }
+
+            messageDiv.innerHTML = html;
+            messagesDiv.appendChild(messageDiv);
+            messagesDiv.scrollTop = messagesDiv.scrollHeight;
+        }
+
+        async function sendMessage() {
+            const input = document.getElementById('user-input');
+            const message = input.value.trim();
+
+            if (!message) return;
+
+            addMessage(message, true);
+            input.value = '';
+
+            try {
+                const response = await fetch('/chat', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ message: message })
+                });
+
+                const data = await response.json();
+
+                if (data.error) {
+                    addMessage('Sorry, I encountered an error. Please try again.');
+                } else {
+                    addMessage(data.answer, false, data.intent, data.confidence);
+                }
+            } catch (error) {
+                addMessage('Connection error. Please try again.');
+            }
+        }
+
+        function sendSuggestion(suggestion) {
+            document.getElementById('user-input').value = suggestion;
+            sendMessage();
+        }
+
+        function handleKeyPress(event) {
+            if (event.key === 'Enter') {
+                sendMessage();
+            }
+        }
+
+        window.onload = function () {
+            document.getElementById('user-input').focus();
+        }
+    </script>
+</body>
+
+</html>
